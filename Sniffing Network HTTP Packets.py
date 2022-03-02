@@ -20,3 +20,13 @@ def sniff_packets(iface=None):
     else:
         # sniff with default interface
         sniff(filter="port 80", prn=process_packet, store=False)
+
+def process_packet(packet):
+    """
+    This function is executed whenever a packet is sniffed
+    """
+    if packet.haslayer(HTTPRequest):
+        # if this packet is an HTTP Request
+        # get the requested URL
+        url = packet[HTTPRequest].Host.decode() + packet[HTTPRequest].Path.decode()
+        # get the requester's IP Address
