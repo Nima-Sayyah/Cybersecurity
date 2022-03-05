@@ -4,7 +4,7 @@ from scapy.layers.http import HTTPRequest
 from colorama import init, Fore
 
 # initialize colorama
-#init()
+init()
 
 nima=sniff(count=3)
 nima
