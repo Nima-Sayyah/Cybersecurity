@@ -1,6 +1,10 @@
 from scapy.all import *
-from scapy.layers.http import HTTPRequest # import HTTP packet
+# import HTTP packet
+from scapy.layers.http import HTTPRequest 
 from colorama import init, Fore
 
-nima=sniff(count=20)
+# initialize colorama
+#init()
+
+nima=sniff(count=3)
 nima
