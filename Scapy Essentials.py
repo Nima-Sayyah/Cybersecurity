@@ -12,5 +12,17 @@ from scapy.all import *
 #h=sr1(IP(dst="10.0.0.1")/ICMP()/"HelloWorld")
 #h.show()
 
-p=sr(IP(dst="10.0.0.1")/TCP(dport=23))
-p
+#p=sr(IP(dst="10.0.0.1")/TCP(dport=22))
+#p
+#p.show()
+#ans,unans=_
+#ans.summary()
+
+
+#p=sr(IP(dst="10.0.0.1")/TCP(dport=[23,80,53]))
+#p
+#ans,unans=_
+#ans.summary()
+
+
+
