@@ -13,4 +13,4 @@ from scapy.all import *
 #h.show()
 
 p=sr(IP(dst="10.0.0.1")/TCP(dport=23))
-ans.summary()
+p
