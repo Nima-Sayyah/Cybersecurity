@@ -28,7 +28,7 @@ from scapy.all import *
 #p=sr(IP(dst="192.168.1.254")/TCP(sport=666,dport=[22,80,21,443], flags="S"))
 #p
 
-#p=sr(IP(dst="192.168.1.254")/TCP(sport=888,dport=[21,22,80,443], flags="A"))
-#p
+p=sr(IP(dst="192.168.1.254")/TCP(sport=888,dport=[21,22,80,443], flags="A"))
 
-p=sr(IP(src="10.1.99.100", dst="10.1.99.2")/TCP(sport=RandShort(), dport=[20,21,80,3389]),inter=0.5,retry=2,timeout=1)
+
+#p=sr(IP(src="10.1.99.100", dst="10.1.99.2")/TCP(sport=RandShort(), dport=[20,21,80,3389]),inter=0.5,retry=2,timeout=1)
