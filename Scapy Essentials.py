@@ -25,8 +25,8 @@ from scapy.all import *
 #ans.summary()
 
 
-p=sr(IP(dst="192.168.1.254")/TCP(sport=666,dport=[22,80,21,443], flags="S"))
-p
+#p=sr(IP(dst="192.168.1.254")/TCP(sport=666,dport=[22,80,21,443], flags="S"))
+#p
 
 p=sr(IP(dst="192.168.1.254")/TCP(sport=888,dport=[21,22,80,443], flags="A"))
 p
