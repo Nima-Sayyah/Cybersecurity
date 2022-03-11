@@ -40,3 +40,6 @@ from scapy.all import *
 #p=traceroute(["www.google.com"], maxttl=20)
 
 #p=traceroute(["192.168.1.254"], maxttl=20)
+
+#p=traceroute (["192.168.1.254"],dport=23,maxttl=20)
+
