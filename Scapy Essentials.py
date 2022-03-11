@@ -37,4 +37,6 @@ from scapy.all import *
 
 #p=sr1(IP(dst="192.168.1.254")/UDP()/DNS(rd=1,qd=DNSQR(qname="citrix.com",qtype= "NS")))
 
-p=traceroute(["www.google.com"], maxttl=20)
+#p=traceroute(["www.google.com"], maxttl=20)
+
+#p=traceroute(["192.168.1.254"], maxttl=20)
