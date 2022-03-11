@@ -33,3 +33,4 @@ from scapy.all import *
 
 #p=sr(IP(src="10.1.99.100", dst="192.168.1.254")/TCP(sport=RandShort(), dport=[20,21,80,3389]),inter=0.5,retry=2,timeout=1)
 
+#p=sr1(IP(dst="192.168.1.254")/UDP()/DNS(rd=1,qd=DNSQR(qname="www.citrix.com")))
