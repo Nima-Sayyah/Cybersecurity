@@ -43,5 +43,5 @@ from scapy.all import *
 
 #p=traceroute (["192.168.1.254"],dport=23,maxttl=20)
 
-p=traceroute (["192.168.1.254", "www.google.com","www.citrix.com"],maxttl=20)
-p
+#p=traceroute(["192.168.1.254", "www.google.com","www.citrix.com"],maxttl=20)
+
