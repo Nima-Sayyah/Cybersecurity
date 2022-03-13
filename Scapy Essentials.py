@@ -45,4 +45,6 @@ from scapy.all import *
 
 #p=traceroute(["192.168.1.254", "www.google.com","www.citrix.com"],maxttl=20)
 
-ans,unans=sr(IP(dst="192.168.1.254")/TCP(dport=[80,666],flags="A"))
+#ans,unans=sr(IP(dst="192.168.1.254")/TCP(dport=[80,666],flags="A"))
+
+ans,unans=sr(IP(dst="192.168.1.254",proto=(0,255))/"SCAPY",retry=2)
