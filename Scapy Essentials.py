@@ -47,4 +47,6 @@ from scapy.all import *
 
 #ans,unans=sr(IP(dst="192.168.1.254")/TCP(dport=[80,666],flags="A"))
 
-ans,unans=sr(IP(dst="192.168.1.254",proto=(0,255))/"SCAPY",retry=2)
+#ans,unans=sr(IP(dst="192.168.1.254",proto=(0,255))/"SCAPY",retry=2)
+
+arping("10.1.99.*")
