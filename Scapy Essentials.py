@@ -51,4 +51,6 @@ from scapy.all import *
 
 #p=arping("192.168.1.*")
 
-ans,unans=sr(IP(dst="192.168.1.1")/ICMP())
+#ans,unans=sr(IP(dst="192.168.1.1-254")/ICMP())
+
+ans,unans=sr(IP(dst="192.168.1.254")/TCP(dport=80,flags=”S”))
