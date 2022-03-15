@@ -53,4 +53,6 @@ from scapy.all import *
 
 #ans,unans=sr(IP(dst="192.168.1.1-254")/ICMP())
 
-ans,unans=sr(IP(dst="192.168.1.254")/TCP(dport=80,flags=”S”))
+# error #ans,unans=sr(IP(dst="192.168.1.*")/TCP(dport=80,flags=”S”))
+
+ans,unans=sr( IP(dst="192.168.1.*"/UDP(dport=0) )
