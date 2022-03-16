@@ -55,4 +55,8 @@ from scapy.all import *
 
 # error #ans,unans=sr(IP(dst="192.168.1.*")/TCP(dport=80,flags=”S”))
 
-ans,unans=sr( IP(dst="192.168.1.*"/UDP(dport=0) )
+#ans,unans=sr(IP(dst="192.168.1.*"/UDP(dport=0))
+
+sniff()
+a=_
+a.nsummary()
