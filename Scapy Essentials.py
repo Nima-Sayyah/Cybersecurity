@@ -57,6 +57,10 @@ from scapy.all import *
 
 #ans,unans=sr(IP(dst="192.168.1.*"/UDP(dport=0))
 
-sniff()
-a=_
-a.nsummary()
+#packet number (0000), frame type (Ether), internet layer (IP), transport layer (TCP), application layer (DNS), packet data (daisy.ubuntu.com)
+#sniff()
+#a=_
+#a.nsummary()
+
+#p=sniff(iface="eth0", filter="icmp", count=10)
+#p
