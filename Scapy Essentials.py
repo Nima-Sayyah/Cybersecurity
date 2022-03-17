@@ -64,3 +64,5 @@ from scapy.all import *
 
 #p=sniff(iface="eth0", filter="icmp", count=10)
 #p
+
+pkts = rdpcap("/Users/NS/Desktop/read1.pcap")
