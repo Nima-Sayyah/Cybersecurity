@@ -72,6 +72,7 @@ from scapy.all import *
 #--------------------------------------------
 
 #pkts=sniff(iface="eth0",filter="tcp and port 80",count=10)
-wrpcap("/tmp/write1.pcap",pkts)
+#wrpcap("/tmp/write1.pcap",pkts)
 
 #--------------------------------------------
+#Viewing packets with Wireshark
