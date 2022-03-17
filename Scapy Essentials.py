@@ -57,6 +57,8 @@ from scapy.all import *
 
 #ans,unans=sr(IP(dst="192.168.1.*"/UDP(dport=0))
 
+#--------------------------------------------
+
 #packet number (0000), frame type (Ether), internet layer (IP), transport layer (TCP), application layer (DNS), packet data (daisy.ubuntu.com)
 #sniff()
 #a=_
@@ -64,8 +66,12 @@ from scapy.all import *
 
 #p=sniff(iface="eth0", filter="icmp", count=10)
 #p
-
+#--------------------------------------------
 #pkts = rdpcap("/Users/NS/Desktop/read1.pcap")
 
-pkts=sniff(iface="eth0",filter="tcp and port 80",count=10)
+#--------------------------------------------
+
+#pkts=sniff(iface="eth0",filter="tcp and port 80",count=10)
 wrpcap("/tmp/write1.pcap",pkts)
+
+#--------------------------------------------
