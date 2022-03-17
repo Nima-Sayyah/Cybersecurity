@@ -76,3 +76,6 @@ from scapy.all import *
 
 #--------------------------------------------
 #Viewing packets with Wireshark
+#
+packets=Ether()/IP(dst="www.google.com")/ICMP()
+packets
