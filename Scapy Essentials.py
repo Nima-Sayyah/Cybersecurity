@@ -82,7 +82,12 @@ from scapy.all import *
 
 #wireshark(packets)
 
-pkts=rdpcap(“/tmp/attack.pcap”)
+#--------------------------------------------
+#pkts=rdpcap(“/tmp/attack.pcap”)
 
-for pkt in pkts:
-    send(pkt)
+#for pkt in pkts:
+    #send(pkt)
+
+#--------------------------------------------
+
+IP()
