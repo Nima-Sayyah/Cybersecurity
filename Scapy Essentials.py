@@ -96,3 +96,4 @@ from scapy.all import *
 
 Ether()/IP()/TCP()
 
+IP()/TCP()/"GET / HTTP/1.0\r\n\r\n"
