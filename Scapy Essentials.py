@@ -90,6 +90,9 @@ from scapy.all import *
 
 #--------------------------------------------
 
-IP()
+#IP()
 
-IP()/TCP()
+#IP()/TCP()
+
+Ether()/IP()/TCP()
+
