@@ -94,8 +94,8 @@ from scapy.all import *
 
 #IP()/TCP()
 
-Ether()/IP()/TCP()
+#Ether()/IP()/TCP()
 
-IP()/TCP()/"GET / HTTP/1.0\r\n\r\n"
+#IP()/TCP()/"GET / HTTP/1.0\r\n\r\n"
 
-Ether()/IP()/IP()/UDP()
+#Ether()/IP()/IP()/UDP()
