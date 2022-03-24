@@ -99,3 +99,15 @@ from scapy.all import *
 #IP()/TCP()/"GET / HTTP/1.0\r\n\r\n"
 
 #Ether()/IP()/IP()/UDP()
+
+#--------------------------------------------
+
+a=Ether() 
+b=IP() 
+c=TCP()
+
+a.show()
+b.show()
+c.show()
+
+#--------------------------------------------
