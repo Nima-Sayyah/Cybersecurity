@@ -111,3 +111,7 @@ from scapy.all import *
 #c.show()
 
 #--------------------------------------------
+
+#Fuzzing:
+
+#send(IP(dst=”your_target”)/fuzz(UDP()/NTP(version=4)(loop=1)
