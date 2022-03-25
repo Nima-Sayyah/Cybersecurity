@@ -119,3 +119,5 @@ from scapy.all import *
 #send( Ether(dst=clientMAC)/ARP(op=”who-has”, psrc=gateway, pdst=client). inter=RandNum(10,40), loop=1)
 
 #send( Ether(dst=clientMAC)/Dot1Q(vlan=1)/Dot1Q(vlan=2) /ARP(op="who-has", psrc=gateway, pdst=client), inter=RandNum(10,40), loop=1 )
+
+#arpcachepoison(target, victim, interval=60)
