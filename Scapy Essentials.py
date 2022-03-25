@@ -115,3 +115,6 @@ from scapy.all import *
 #Fuzzing:
 
 #send(IP(dst=”your_target”)/fuzz(UDP()/NTP(version=4)(loop=1)
+
+#send( Ether(dst=clientMAC)/ARP(op=”who-has”, psrc=gateway, pdst=client). inter=RandNum(10,40), loop=1)
+
