@@ -102,12 +102,12 @@ from scapy.all import *
 
 #--------------------------------------------
 
-a=Ether() 
-b=IP() 
-c=TCP()
+#a=Ether() 
+#b=IP() 
+#c=TCP()
 
-a.show()
-b.show()
-c.show()
+#a.show()
+#b.show()
+#c.show()
 
 #--------------------------------------------
