@@ -136,7 +136,9 @@ from scapy.all import *
 
 #--------------------------------------------
 
-ls()  ---> display all of the available protocols
-lsc() ---> display all the Scapy command functions 
-ls(protocol)
-ls(ARP) 
+#ls()  ---> display all of the available protocols
+#lsc() ---> display all the Scapy command functions 
+#ls(protocol)
+#ls(ARP) 
+
+#--------------------------------------------
