@@ -128,8 +128,15 @@ from scapy.all import *
 
 #sendp(Ether()/Dot1Q(vlan=2)/Dot1Q(vlan=7)/IP(dst=target)/ICMP())
 
-import sys
-from scapy.all import sr1,IP,ICMP
-p=sr1(IP(dst=sys.argv[1])/ICMP()) 
-if p:
-    p.show()
+#import sys
+#from scapy.all import sr1,IP,ICMP
+#p=sr1(IP(dst=sys.argv[1])/ICMP()) 
+#if p:
+    #p.show()
+
+#--------------------------------------------
+
+ls()  ---> display all of the available protocols
+lsc() ---> display all the Scapy command functions 
+ls(protocol)
+ls(ARP) 
