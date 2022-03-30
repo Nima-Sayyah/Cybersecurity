@@ -33,3 +33,7 @@ if __name__ == "__main__":
     interface = "wlan0mon"
     # start the thread that prints all the networks
     printer = Thread(target=print_all)
+    printer.daemon = True
+    printer.start()
+    # start sniffing
+    sniff(prn=callback, iface=interface)
