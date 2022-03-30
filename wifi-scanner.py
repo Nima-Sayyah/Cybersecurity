@@ -8,7 +8,7 @@ import os
 networks = pandas.DataFrame(columns=["BSSID", "SSID", "dBm_Signal", "Channel", "Crypto"])
 networks.set_index("BSSID", inplace=True)
 
-ef callback(packet):
+def callback(packet):
     if packet.haslayer(Dot11Beacon):
         bssid = packet[Dot11].addr2
         ssid = packet[Dot11Elt].info.decode()
@@ -21,3 +21,10 @@ ef callback(packet):
         channel = stats.get("channel")
         crypto = stats.get("crypto")
         networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
+
+def print_all():
+    while True:
+        os.system("clear")
+        print(networks)
+        time.sleep(0.5)
+        
