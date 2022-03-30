@@ -27,4 +27,9 @@ def print_all():
         os.system("clear")
         print(networks)
         time.sleep(0.5)
-        
+
+if __name__ == "__main__":
+    # interface name, check using iwconfig
+    interface = "wlan0mon"
+    # start the thread that prints all the networks
+    printer = Thread(target=print_all)
