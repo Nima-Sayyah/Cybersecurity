@@ -4,16 +4,16 @@ import pandas
 import time
 import os
 
-# initialize the networks dataframe containing all access points nearby
+# Initializing the networks dataframe containing all access points nearby
 networks = pandas.DataFrame(columns=["BSSID", "SSID", "dBm_Signal", "Channel", "Crypto"])
-# set the index BSSID (MAC address of the AP)
+# Setting the index BSSID (MAC address of the AP)
 networks.set_index("BSSID", inplace=True)
 
 def callback(packet):
     if packet.haslayer(Dot11Beacon):
-        # extract the MAC address of the network
+        # Extracting the MAC address of the network
         bssid = packet[Dot11].addr2
-        # get the name of it
+        # Getting the name of it
         ssid = packet[Dot11Elt].info.decode()
 
         try:
@@ -21,11 +21,11 @@ def callback(packet):
         except:
             dbm_signal = "N/A"
 
-        # extract network stats
+        # Extract network stats
         stats = packet[Dot11Beacon].network_stats()
-        # get the channel of the AP
+        # Getting the channel of the AP
         channel = stats.get("channel")
-        # get the crypto
+        # Getting the crypto
         crypto = stats.get("crypto")
         networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
 
@@ -36,11 +36,11 @@ def print_all():
         time.sleep(0.5)
 
 if __name__ == "__main__":
-    # interface name, check using iwconfig
+    # Interface name, check using iwconfig
     interface = "wlan0mon"
-    # start the thread that prints all the networks
+    # Starting the thread that prints all the networks
     printer = Thread(target=print_all)
     printer.daemon = True
     printer.start()
-    # start sniffing
+    # Starting sniffing
     sniff(prn=callback, iface=interface)
