@@ -26,3 +26,10 @@ def callback(packet):
         # get the crypto
         crypto = stats.get("crypto")
         networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
+
+
+def print_all():
+    while True:
+        os.system("clear")
+        print(networks)
+        time.sleep(0.5)
