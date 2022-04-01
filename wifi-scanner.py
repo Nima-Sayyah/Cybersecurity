@@ -42,3 +42,18 @@ def change_channel():
         # switch channel from 1 to 14 each 0.5s
         ch = ch % 14 + 1
         time.sleep(0.5)
+
+
+if __name__ == "__main__":
+    # interface name, check using iwconfig
+    interface = "wlan0mon"
+    # start the thread that prints all the networks
+    printer = Thread(target=print_all)
+    printer.daemon = True
+    printer.start()
+    # start the channel changer
+    channel_changer = Thread(target=change_channel)
+    channel_changer.daemon = True
+    channel_changer.start()
+    # start sniffing
+    sniff(prn=callback, iface=interface)
