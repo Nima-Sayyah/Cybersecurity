@@ -33,3 +33,12 @@ def print_all():
         os.system("clear")
         print(networks)
         time.sleep(0.5)
+
+
+def change_channel():
+    ch = 1
+    while True:
+        os.system(f"iwconfig {interface} channel {ch}")
+        # switch channel from 1 to 14 each 0.5s
+        ch = ch % 14 + 1
+        time.sleep(0.5)
