@@ -21,3 +21,7 @@ for sent, received in result:
 # print clients
 print("Available devices in the network:")
 print("IP" + " "*18+"MAC")
+
+
+for client in clients:
+    print("{:16}    {}".format(client['ip'], client['mac']))
