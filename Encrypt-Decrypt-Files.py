@@ -22,3 +22,9 @@ def encrypt(filename, key):
     with open(filename, "rb") as file:
         # read all file data
         file_data = file.read()
+
+    # encrypt data
+    encrypted_data = f.encrypt(file_data)
+    # write the encrypted file
+    with open(filename, "wb") as file:
+        file.write(encrypted_data)
