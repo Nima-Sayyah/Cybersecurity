@@ -42,3 +42,7 @@ def decrypt(filename, key):
     # write the original file
     with open(filename, "wb") as file:
         file.write(decrypted_data)
+
+    if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Simple File Encryptor Script")
