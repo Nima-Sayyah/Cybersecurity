@@ -28,3 +28,12 @@ def encrypt(filename, key):
     # write the encrypted file
     with open(filename, "wb") as file:
         file.write(encrypted_data)
+
+def decrypt(filename, key):
+    """
+    Given a filename (str) and key (bytes), it decrypts the file and write it
+    """
+    f = Fernet(key)
+    with open(filename, "rb") as file:
+        # read the encrypted data
+        encrypted_data = file.read()
