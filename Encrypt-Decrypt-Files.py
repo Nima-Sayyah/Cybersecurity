@@ -49,3 +49,7 @@ def decrypt(filename, key):
     parser.add_argument("file", help="File to encrypt/decrypt")
     parser.add_argument("-g", "--generate-key", dest="generate_key", action="store_true",
                         help="Whether to generate a new key or use existing")
+    parser.add_argument("-e", "--encrypt", action="store_true",
+                        help="Whether to encrypt the file, only -e or -d can be specified.")
+    parser.add_argument("-d", "--decrypt", action="store_true",
+                        help="Whether to decrypt the file, only -e or -d can be specified.")
