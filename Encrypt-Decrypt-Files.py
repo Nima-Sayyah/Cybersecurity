@@ -44,8 +44,11 @@ def decrypt(filename, key):
         file.write(decrypted_data)
 
     if __name__ == "__main__":
+
     import argparse
+
     parser = argparse.ArgumentParser(description="Simple File Encryptor Script")
+
     parser.add_argument("file", help="File to encrypt/decrypt")
     parser.add_argument("-g", "--generate-key", dest="generate_key", action="store_true",
                         help="Whether to generate a new key or use existing")
