@@ -67,3 +67,7 @@ def decrypt(filename, key):
         raise TypeError("Please specify whether you want to encrypt the file or decrypt it.")
     elif encrypt_:
         encrypt(file, key)
+    elif decrypt_:
+        decrypt(file, key)
+    else:
+        raise TypeError("Please specify whether you want to encrypt the file or decrypt it.")
