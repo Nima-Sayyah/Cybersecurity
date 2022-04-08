@@ -62,3 +62,8 @@ def decrypt(filename, key):
         write_key()
     # load the key
     key = load_key()
+
+    if encrypt_ and decrypt_:
+        raise TypeError("Please specify whether you want to encrypt the file or decrypt it.")
+    elif encrypt_:
+        encrypt(file, key)
