@@ -57,3 +57,8 @@ def decrypt(filename, key):
     args = parser.parse_args()
     file = args.file
     generate_key = args.generate_key
+
+    if generate_key:
+        write_key()
+    # load the key
+    key = load_key()
