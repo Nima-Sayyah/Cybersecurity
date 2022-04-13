@@ -25,3 +25,13 @@ def get_form_details(form):
         action = form.attrs.get("action").lower()
     except:
         action = None
+
+# get the form method (POST, GET, etc.)
+    method = form.attrs.get("method", "get").lower()
+    # get all the input details such as type and name
+    inputs = []
+    for input_tag in form.find_all("input"):
+        input_type = input_tag.attrs.get("type", "text")
+        input_name = input_tag.attrs.get("name")
+        input_value = input_tag.attrs.get("value", "")
+        inputs.append({"type": input_type, "name": input_name, "value": input_value})
