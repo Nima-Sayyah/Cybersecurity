@@ -35,3 +35,9 @@ def get_form_details(form):
         input_name = input_tag.attrs.get("name")
         input_value = input_tag.attrs.get("value", "")
         inputs.append({"type": input_type, "name": input_name, "value": input_value})
+
+    # put everything to the resulting dictionary
+    details["action"] = action
+    details["method"] = method
+    details["inputs"] = inputs
+    return details
