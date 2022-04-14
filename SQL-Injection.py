@@ -41,3 +41,16 @@ def get_form_details(form):
     details["method"] = method
     details["inputs"] = inputs
     return details
+
+def is_vulnerable(response):
+    """A simple boolean function that determines whether a page
+    is SQL Injection vulnerable from its `response`"""
+    errors = {
+        # MySQL
+        "you have an error in your sql syntax;",
+        "warning: mysql",
+        # SQL Server
+        "unclosed quotation mark after the character string",
+        # Oracle
+        "quoted string not properly terminated",
+    }
