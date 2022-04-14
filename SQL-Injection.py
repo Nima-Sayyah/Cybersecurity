@@ -60,3 +60,17 @@ def is_vulnerable(response):
             return True
     # no error detected
     return False
+
+def scan_sql_injection(url):
+    # test on URL
+    for c in "\"'":
+        # add quote/double quote character to the URL
+        new_url = f"{url}{c}"
+        print("[!] Trying", new_url)
+        # make the HTTP request
+        res = s.get(new_url)
+        if is_vulnerable(res):
+            # SQL Injection detected on the URL itself,
+            # no need to preceed for extracting forms and submitting them
+            print("[+] SQL Injection vulnerability detected, link:", new_url)
+            return
