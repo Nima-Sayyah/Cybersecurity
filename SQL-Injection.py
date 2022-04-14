@@ -54,3 +54,9 @@ def is_vulnerable(response):
         # Oracle
         "quoted string not properly terminated",
     }
+    for error in errors:
+        # if you find one of these errors, return True
+        if error in response.content.decode().lower():
+            return True
+    # no error detected
+    return False
