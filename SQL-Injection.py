@@ -102,4 +102,8 @@ def scan_sql_injection(url):
             elif form_details["method"] == "get":
                 res = s.get(url, params=data)
             # test whether the resulting page is vulnerable
-            
+            if is_vulnerable(res):
+                print("[+] SQL Injection vulnerability detected, link:", url)
+                print("[+] Form:")
+                pprint(form_details)
+                break
