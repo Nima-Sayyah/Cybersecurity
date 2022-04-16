@@ -83,3 +83,14 @@ def scan_sql_injection(url):
         for c in "\"'":
             # the data body we want to submit
             data = {}
+            for input_tag in form_details["inputs"]:
+                if input_tag["type"] == "hidden" or input_tag["value"]:
+                    # any input form that is hidden or has some value,
+                    # just use it in the form body
+                    try:
+                        data[input_tag["name"]] = input_tag["value"] + c
+                    except:
+                        pass
+                elif input_tag["type"] != "submit":
+                    # all others except submit, use some junk data with special character
+                    data[input_tag["name"]] = f"test{c}"
