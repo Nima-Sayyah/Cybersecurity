@@ -74,3 +74,12 @@ def scan_sql_injection(url):
             # no need to preceed for extracting forms and submitting them
             print("[+] SQL Injection vulnerability detected, link:", new_url)
             return
+
+    # test on HTML forms
+    forms = get_all_forms(url)
+    print(f"[+] Detected {len(forms)} forms on {url}.")
+    for form in forms:
+        form_details = get_form_details(form)
+        for c in "\"'":
+            # the data body we want to submit
+            data = {}
