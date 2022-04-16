@@ -94,3 +94,12 @@ def scan_sql_injection(url):
                 elif input_tag["type"] != "submit":
                     # all others except submit, use some junk data with special character
                     data[input_tag["name"]] = f"test{c}"
+
+            # join the url with the action (form request URL)
+            url = urljoin(url, form_details["action"])
+            if form_details["method"] == "post":
+                res = s.post(url, data=data)
+            elif form_details["method"] == "get":
+                res = s.get(url, params=data)
+            # test whether the resulting page is vulnerable
+            
