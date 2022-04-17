@@ -26,7 +26,7 @@ def get_form_details(form):
     except:
         action = None
 
-# get the form method (POST, GET, etc.)
+    # get the form method (POST, GET, etc.)
     method = form.attrs.get("method", "get").lower()
     # get all the input details such as type and name
     inputs = []
