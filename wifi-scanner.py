@@ -9,6 +9,7 @@ networks = pandas.DataFrame(columns=["BSSID", "SSID", "dBm_Signal", "Channel", "
 # Setting the index BSSID (MAC address of the AP)
 networks.set_index("BSSID", inplace=True)
 
+
 def callback(packet):
     if packet.haslayer(Dot11Beacon):
         # Extracting the MAC address of the network
@@ -28,11 +29,13 @@ def callback(packet):
         networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
 
 
+
 def print_all():
     while True:
         os.system("clear")
         print(networks)
         time.sleep(0.5)
+
 
 
 def change_channel():
