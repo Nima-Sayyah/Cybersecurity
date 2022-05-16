@@ -23,3 +23,7 @@ def request_page_from_shodan(query, page=1):
 def has_valid_credentials(instance):
     sess = requests.Session()
     proto = ('ssl' in instance) and 'https' or 'http'
+    try:
+        res = sess.get(f"{proto}://{instance['ip_str']}:{instance['port']}/login.php", verify=False)
+    except requests.exceptions.ConnectionError:
+        return False
