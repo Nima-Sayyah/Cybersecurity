@@ -34,4 +34,10 @@ def has_valid_credentials(instance):
 
     # search the CSRF token using regex
     token = re.search(r"user_token' value='([0-9a-f]+)'", res.text).group(1)
-    
+    res = sess.post(
+        f"{proto}://{instance['ip_str']}:{instance['port']}/login.php",
+        f"username=admin&password=password&user_token={token}&Login=Login",
+        allow_redirects=False,
+        verify=False,
+        headers={'Content-Type': 'application/x-www-form-urlencoded'}
+    )
