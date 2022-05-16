@@ -13,3 +13,7 @@ def request_page_from_shodan(query, page=1):
         try:
             instances = api.search(query, page=page)
             return instances
+
+        except shodan.APIError as e:
+            print(f"Error: {e}")
+            time.sleep(5)
