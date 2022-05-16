@@ -27,3 +27,11 @@ def has_valid_credentials(instance):
         res = sess.get(f"{proto}://{instance['ip_str']}:{instance['port']}/login.php", verify=False)
     except requests.exceptions.ConnectionError:
         return False
+
+    if res.status_code != 200:
+        print("[-] Got HTTP status code {res.status_code}, expected 200")
+        return False
+
+    # search the CSRF token using regex
+    token = re.search(r"user_token' value='([0-9a-f]+)'", res.text).group(1)
+    
