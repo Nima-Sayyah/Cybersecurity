@@ -47,3 +47,12 @@ def has_valid_credentials(instance):
         return True
     else:
         return False
+
+    # Takes a page of results, and scans each of them, running has_valid_credentials
+def process_page(page):
+    result = []
+    for instance in page['matches']:
+        if has_valid_credentials(instance):
+            print(f"[+] valid credentials at : {instance['ip_str']}:{instance['port']}")
+            result.append(instance)
+    return result
