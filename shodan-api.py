@@ -41,3 +41,9 @@ def has_valid_credentials(instance):
         verify=False,
         headers={'Content-Type': 'application/x-www-form-urlencoded'}
     )
+
+    if res.status_code == 302 and res.headers['Location'] == 'index.php':
+        # Redirects to index.php, we expect an authentication success
+        return True
+    else:
+        return False
