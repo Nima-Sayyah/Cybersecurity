@@ -56,3 +56,10 @@ def process_page(page):
             print(f"[+] valid credentials at : {instance['ip_str']}:{instance['port']}")
             result.append(instance)
     return result
+
+    # searches on shodan using the given query, and iterates over each page of the results
+def query_shodan(query):
+    print("[*] querying the first page")
+    first_page = request_page_from_shodan(query)
+    total = first_page['total']
+    
