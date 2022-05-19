@@ -71,4 +71,7 @@ while already_processed < total:
         break
         print("querying page {page}")
         page = request_page_from_shodan(query, page=page)
-        
+        already_processed += len(page['matches'])
+        result += process_page(page)
+        page += 1
+    return result
