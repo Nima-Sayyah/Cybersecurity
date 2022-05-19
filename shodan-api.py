@@ -62,4 +62,6 @@ def query_shodan(query):
     print("[*] querying the first page")
     first_page = request_page_from_shodan(query)
     total = first_page['total']
-    
+    already_processed = len(first_page['matches'])
+    result = process_page(first_page)
+    page = 2
