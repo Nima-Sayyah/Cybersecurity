@@ -48,7 +48,7 @@ def has_valid_credentials(instance):
     else:
         return False
 
-    # Takes a page of results, and scans each of them, running has_valid_credentials
+# Takes a page of results, and scans each of them, running has_valid_credentials
 def process_page(page):
     result = []
     for instance in page['matches']:
@@ -57,7 +57,7 @@ def process_page(page):
             result.append(instance)
     return result
 
-    # searches on shodan using the given query, and iterates over each page of the results
+# searches on shodan using the given query, and iterates over each page of the results
 def query_shodan(query):
     print("[*] querying the first page")
     first_page = request_page_from_shodan(query)
