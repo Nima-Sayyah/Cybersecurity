@@ -75,3 +75,7 @@ while already_processed < total:
         result += process_page(page)
         page += 1
     return result
+
+# search for DVWA instances
+res = query_shodan('title:dvwa')
+print(res)
