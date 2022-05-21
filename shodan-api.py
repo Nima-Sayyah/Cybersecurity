@@ -9,8 +9,7 @@ api = shodan.Shodan(SHODAN_API_KEY)
 
 # requests a page of data from shodan
 def request_page_from_shodan(query, page=1):
-    while True:
-        try:
+    while True:try:
             instances = api.search(query, page=page)
             return instances
 
@@ -23,8 +22,10 @@ def request_page_from_shodan(query, page=1):
 def has_valid_credentials(instance):
     sess = requests.Session()
     proto = ('ssl' in instance) and 'https' or 'http'
+
     try:
         res = sess.get(f"{proto}://{instance['ip_str']}:{instance['port']}/login.php", verify=False)
+
     except requests.exceptions.ConnectionError:
         return False
 
