@@ -9,7 +9,9 @@ api = shodan.Shodan(SHODAN_API_KEY)
 
 # requests a page of data from shodan
 def request_page_from_shodan(query, page=1):
-    while True:try:
+    while True:
+
+        try:
             instances = api.search(query, page=page)
             return instances
 
@@ -46,7 +48,9 @@ def has_valid_credentials(instance):
     if res.status_code == 302 and res.headers['Location'] == 'index.php':
         # Redirects to index.php, we expect an authentication success
         return True
+
     else:
+
         return False
 
 # Takes a page of results, and scans each of them, running has_valid_credentials
