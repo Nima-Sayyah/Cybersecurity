@@ -22,6 +22,7 @@ def request_page_from_shodan(query, page=1):
 # Try the default credentials on a given instance of DVWA, simulating a real user trying the credentials
 # visits the login.php page to get the CSRF token, and tries to login with admin:password
 def has_valid_credentials(instance):
+
     sess = requests.Session()
     proto = ('ssl' in instance) and 'https' or 'http'
 
