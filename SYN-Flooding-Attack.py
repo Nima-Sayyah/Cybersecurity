@@ -18,3 +18,5 @@ raw = Raw(b"X"*1024)
 p = ip / tcp / raw
 # send the constructed packet in a loop until CTRL+C is detected
 send(p, loop=1, verbose=0)
+
+$ ping -t "192.168.1.1"
