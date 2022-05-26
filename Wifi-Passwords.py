@@ -5,6 +5,7 @@ from collections import namedtuple
 import configparser
 
 def get_linux_saved_wifi_passwords(verbose=1):
+
     """Extracts saved Wi-Fi passwords saved in a Linux machine, this function extracts data in the
     `/etc/NetworkManager/system-connections/` directory
     Args:
@@ -12,6 +13,7 @@ def get_linux_saved_wifi_passwords(verbose=1):
     Returns:
         [list]: list of extracted profiles, a profile has the fields ["ssid", "auth-alg", "key-mgmt", "psk"]
     """
+
     network_connections_path = "/etc/NetworkManager/system-connections/"
     fields = ["ssid", "auth-alg", "key-mgmt", "psk"]
     Profile = namedtuple("Profile", [f.replace("-", "_") for f in fields])
