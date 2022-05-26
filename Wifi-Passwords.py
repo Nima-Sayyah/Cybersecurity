@@ -27,3 +27,5 @@ def get_linux_saved_wifi_passwords(verbose=1):
         profile = Profile(**data)
         if verbose >= 1:
             print_linux_profile(profile)
+        profiles.append(profile)
+    return profiles
