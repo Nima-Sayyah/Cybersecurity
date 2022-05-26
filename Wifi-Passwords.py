@@ -6,6 +6,7 @@ import configparser
 
 def get_linux_saved_wifi_passwords(verbose=1):
 
+
     """Extracts saved Wi-Fi passwords saved in a Linux machine, this function extracts data in the
     `/etc/NetworkManager/system-connections/` directory
     Args:
