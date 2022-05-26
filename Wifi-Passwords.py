@@ -24,3 +24,6 @@ def get_linux_saved_wifi_passwords(verbose=1):
             for k, v in section.items():
                 if k in fields:
                     data[k.replace("-", "_")] = v
+        profile = Profile(**data)
+        if verbose >= 1:
+            print_linux_profile(profile)
