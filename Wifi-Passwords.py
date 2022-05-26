@@ -20,3 +20,7 @@ def get_linux_saved_wifi_passwords(verbose=1):
         data = { k.replace("-", "_"): None for k in fields }
         config = configparser.ConfigParser()
         config.read(os.path.join(network_connections_path, file))
+        for _, section in config.items():
+            for k, v in section.items():
+                if k in fields:
+                    data[k.replace("-", "_")] = v
