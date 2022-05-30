@@ -59,3 +59,12 @@ def get_linux_saved_wifi_passwords(verbose=1):
     fields = ["ssid", "auth-alg", "key-mgmt", "psk"]
     Profile = namedtuple("Profile", [f.replace("-", "_") for f in fields])
     profiles = []
+
+    for file in os.listdir(network_connections_path):
+        data = { k.replace("-", "_"): None for k in fields }
+        config = configparser.ConfigParser()
+        config.read(os.path.join(network_connections_path, file))
+        for _, section in config.items():
+            for k, v in section.items():
+                if k in fields:
+                    data[k.replace("-", "_")] = v
