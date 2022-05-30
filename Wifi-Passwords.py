@@ -42,3 +42,15 @@ def get_linux_saved_wifi_passwords(verbose=1):
     print("SSID                     AUTH KEY-MGMT  PSK")
     print("-"*50)
     get_linux_saved_wifi_passwords(verbose)
+
+    def get_linux_saved_wifi_passwords(verbose=1):
+
+    """Extracts saved Wi-Fi passwords saved in a Linux machine, this function extracts data in the
+    `/etc/NetworkManager/system-connections/` directory
+    Args:
+        verbose (int, optional): whether to print saved profiles real-time. Defaults to 1.
+    Returns:
+        [list]: list of extracted profiles, a profile has the fields ["ssid", "auth-alg", "key-mgmt", "psk"]
+    """
+
+    
