@@ -74,3 +74,7 @@ def get_linux_saved_wifi_passwords(verbose=1):
             print_linux_profile(profile)
         profiles.append(profile)
     return profiles
+
+    def print_linux_profile(profile):
+    """Prints a single profile on Linux"""
+    print(f"{str(profile.ssid):25}{str(profile.auth_alg):5}{str(profile.key_mgmt):10}{str(profile.psk):50}")
