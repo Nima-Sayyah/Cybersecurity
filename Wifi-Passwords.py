@@ -82,7 +82,9 @@ def get_linux_saved_wifi_passwords(verbose=1):
     print(f"{str(profile.ssid):25}{str(profile.auth_alg):5}{str(profile.key_mgmt):10}{str(profile.psk):50}")
 
     def print_linux_profiles(verbose):
+
     """Prints all extracted SSIDs along with Key (PSK) on Linux"""
+
     print("SSID                     AUTH KEY-MGMT  PSK")
     print("-"*50)
     get_linux_saved_wifi_passwords(verbose)
