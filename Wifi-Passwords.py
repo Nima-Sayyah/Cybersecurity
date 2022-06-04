@@ -85,9 +85,9 @@ def get_linux_saved_wifi_passwords(verbose=1):
 
     """Prints all extracted SSIDs along with Key (PSK) on Linux"""
 
-    print("SSID                     AUTH KEY-MGMT  PSK")
-    print("-"*50)
-    get_linux_saved_wifi_passwords(verbose)
+        print("SSID                     AUTH KEY-MGMT  PSK")
+        print("-"*50)
+        get_linux_saved_wifi_passwords(verbose)
 
     def print_profiles(verbose=1):
         if os.name == "nt":
