@@ -88,3 +88,7 @@ def get_linux_saved_wifi_passwords(verbose=1):
     print("SSID                     AUTH KEY-MGMT  PSK")
     print("-"*50)
     get_linux_saved_wifi_passwords(verbose)
+
+    def print_profiles(verbose=1):
+        if os.name == "nt":
+        print_windows_profiles(verbose)
