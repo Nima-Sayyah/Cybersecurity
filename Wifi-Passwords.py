@@ -91,4 +91,8 @@ def get_linux_saved_wifi_passwords(verbose=1):
 
     def print_profiles(verbose=1):
         if os.name == "nt":
-        print_windows_profiles(verbose)
+            print_windows_profiles(verbose)
+        elif os.name == "posix":
+            print_linux_profiles(verbose)
+        else:
+            raise NotImplemented("Code only works for either Linux or Windows")
