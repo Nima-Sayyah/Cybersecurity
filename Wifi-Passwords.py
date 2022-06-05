@@ -96,3 +96,6 @@ def get_linux_saved_wifi_passwords(verbose=1):
             print_linux_profiles(verbose)
         else:
             raise NotImplemented("Code only works for either Linux or Windows")
+
+    if __name__ == "__main__":
+    print_profiles()
