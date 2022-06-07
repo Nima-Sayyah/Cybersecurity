@@ -24,3 +24,8 @@ def is_correct(password):
     except ftplib.error_perm:
         # login failed, wrong credentials
         return False
+
+    else:
+        # correct credentials
+        print(f"{Fore.GREEN}[+] Found credentials:", password, Fore.RESET)
+        return True
