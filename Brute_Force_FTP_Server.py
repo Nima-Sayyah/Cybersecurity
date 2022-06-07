@@ -29,3 +29,7 @@ def is_correct(password):
         # correct credentials
         print(f"{Fore.GREEN}[+] Found credentials:", password, Fore.RESET)
         return True
+
+# read the wordlist of passwords
+passwords = open("wordlist.txt").read().split("\n")
+print("[+] Passwords to try:", len(passwords))
