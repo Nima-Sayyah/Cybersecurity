@@ -10,3 +10,8 @@ host = "192.168.1.113"
 user = "test"
 # port of FTP, aka 21
 port = 21
+
+def is_correct(password):
+    # initialize the FTP server object
+    server = ftplib.FTP()
+    print(f"[!] Trying", password)
