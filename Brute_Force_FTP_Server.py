@@ -39,3 +39,6 @@ print("[+] Passwords to try:", len(passwords))
 for password in passwords:
     if is_correct(password):
         break
+
+#this code is okey, but it is very slow,
+#it uses only one thread that attempts an FTP connection on each password sequentially.
