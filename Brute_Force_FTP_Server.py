@@ -33,3 +33,9 @@ def is_correct(password):
 # read the wordlist of passwords
 passwords = open("wordlist.txt").read().split("\n")
 print("[+] Passwords to try:", len(passwords))
+
+# iterate over passwords one by one
+# if the password is found, break out of the loop
+for password in passwords:
+    if is_correct(password):
+        break
