@@ -42,3 +42,11 @@ for password in passwords:
 
 #this code is okey, but it is very slow,
 #it uses only one thread that attempts an FTP connection on each password sequentially.
+
+#Let's use threads to accelerate this process,
+#the following code is the complete one that uses multi-threading:
+
+import ftplib
+from threading import Thread
+import queue
+from colorama import Fore, init # for fancy colors, nothing else
