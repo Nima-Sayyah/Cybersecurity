@@ -50,3 +50,10 @@ import ftplib
 from threading import Thread
 import queue
 from colorama import Fore, init # for fancy colors, nothing else
+
+# init the console for colors (for Windows)
+# init()
+# initialize the queue
+q = queue.Queue()
+# number of threads to spawn
+n_threads = 30
