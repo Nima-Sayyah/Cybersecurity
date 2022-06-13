@@ -87,3 +87,8 @@ def connect_ftp():
             print(f"\tHost: {host}")
             print(f"\tUser: {user}")
             print(f"\tPassword: {password}{Fore.RESET}")
+            # we found the password, let's clear the queue
+            with q.mutex:
+                q.queue.clear()
+                q.all_tasks_done.notify_all()
+                q.unfinished_tasks = 0
