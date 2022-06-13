@@ -92,3 +92,6 @@ def connect_ftp():
                 q.queue.clear()
                 q.all_tasks_done.notify_all()
                 q.unfinished_tasks = 0
+        finally:
+            # notify the queue that the task is completed for this password
+            q.task_done()
