@@ -77,3 +77,6 @@ def connect_ftp():
             server.connect(host, port, timeout=5)
             # login using the credentials (user & password)
             server.login(user, password)
+        except ftplib.error_perm:
+            # login failed, wrong credentials
+            pass
