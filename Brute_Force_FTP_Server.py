@@ -80,3 +80,10 @@ def connect_ftp():
         except ftplib.error_perm:
             # login failed, wrong credentials
             pass
+
+        else:
+            # correct credentials
+            print(f"{Fore.GREEN}[+] Found credentials: ")
+            print(f"\tHost: {host}")
+            print(f"\tUser: {user}")
+            print(f"\tPassword: {password}{Fore.RESET}")
