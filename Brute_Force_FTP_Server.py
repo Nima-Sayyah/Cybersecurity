@@ -63,3 +63,9 @@ host = "192.168.1.113"
 user = "test"
 # port of FTP, aka 21
 port = 21
+
+def connect_ftp():
+    global q
+    while True:
+        # get the password from the queue
+        password = q.get()
