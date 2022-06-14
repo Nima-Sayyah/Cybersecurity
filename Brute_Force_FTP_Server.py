@@ -95,3 +95,7 @@ def connect_ftp():
         finally:
             # notify the queue that the task is completed for this password
             q.task_done()
+
+# read the wordlist of passwords
+passwords = open("wordlist.txt").read().split("\n")
+print("[+] Passwords to try:", len(passwords))
