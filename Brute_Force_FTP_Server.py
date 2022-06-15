@@ -108,3 +108,5 @@ for t in range(n_threads):
     # will end when the main thread end
     thread.daemon = True
     thread.start()
+# wait for the queue to be empty
+q.join()
