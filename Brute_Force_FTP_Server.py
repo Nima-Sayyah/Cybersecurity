@@ -34,14 +34,12 @@ def is_correct(password):
 passwords = open("wordlist.txt").read().split("\n")
 print("[+] Passwords to try:", len(passwords))
 
-# iterate over passwords one by one
-# if the password is found, break out of the loop
+# iterate over passwords one by one if the password is found, break out of the loop
 for password in passwords:
     if is_correct(password):
         break
 
-#this code is okey, but it is very slow,
-#it uses only one thread that attempts an FTP connection on each password sequentially.
+#code is okey, but slow, uses one thread that attempts an FTP connection on each password sequentially.
 
 #Let's use threads to accelerate this process,
 #the following code is the complete one that uses multi-threading:
