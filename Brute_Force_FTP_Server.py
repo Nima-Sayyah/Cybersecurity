@@ -6,8 +6,10 @@ from colorama import Fore, init # for fancy colors, nothing else
 
 # hostname or IP address of the FTP server
 host = "192.168.1.113"
+
 # username of the FTP server, root as default for linux
 user = "test"
+
 # port of FTP, aka 21
 port = 21
 
