@@ -44,17 +44,17 @@ for password in passwords:
     if is_correct(password):
         break
 
-#code is okey, but slow, uses one thread that attempts an FTP connection on each password sequentially.
-
-#using threads to accelerate this process: following code is the complete one that uses multi-threading:
+# above code is slow, uses one thread that attempts an FTP connection on each password sequentially.
+# using threads to accelerate this process: below code is the complete one that uses multi-threading:
 
 import ftplib
 from threading import Thread
 import queue
-from colorama import Fore, init # for fancy colors, nothing else
+from colorama import Fore, init # for fancy colors only
 
 # init the console for colors (for Windows)
 # init()
+
 # initialize the queue
 q = queue.Queue()
 # number of threads to spawn
