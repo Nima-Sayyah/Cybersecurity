@@ -57,12 +57,16 @@ from colorama import Fore, init # for fancy colors only
 
 # initialize the queue
 q = queue.Queue()
+
 # number of threads to spawn
 n_threads = 30
+
 # hostname or IP address of the FTP server
 host = "192.168.1.113"
+
 # username of the FTP server, root as default for linux
 user = "test"
+
 # port of FTP, aka 21
 port = 21
 
