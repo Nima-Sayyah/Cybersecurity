@@ -11,3 +11,9 @@ file = open("subdomains.txt")
 content = file.read()
 # split by new lines
 subdomains = content.splitlines()
+
+# a list of discovered subdomains
+discovered_subdomains = []
+for subdomain in subdomains:
+    # construct the url
+    url = f"http://{subdomain}.{domain}"
