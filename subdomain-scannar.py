@@ -29,3 +29,8 @@ for subdomain in subdomains:
         print("[+] Discovered subdomain:", url)
         # append the discovered subdomain to our list
         discovered_subdomains.append(url)
+
+# save the discovered subdomains into a file
+with open("discovered_subdomains.txt", "w") as f:
+    for subdomain in discovered_subdomains:
+        print(subdomain, file=f)
