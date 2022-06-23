@@ -18,9 +18,14 @@ for subdomain in subdomains:
     # construct the url
     url = f"http://{subdomain}.{domain}"
 
-try:
+    try:
         # if this raises an ERROR, that means the subdomain does not exist
         requests.get(url)
     except requests.ConnectionError:
         # if the subdomain does not exist, just pass, print nothing
         pass
+
+    else:
+        print("[+] Discovered subdomain:", url)
+        # append the discovered subdomain to our list
+        discovered_subdomains.append(url)
