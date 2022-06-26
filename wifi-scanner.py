@@ -36,7 +36,7 @@ def callback(packet):
         networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
 
 
-
+# function to print all
 def print_all():
     while True:
         os.system("clear")
