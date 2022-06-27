@@ -4,9 +4,11 @@ from tqdm import tqdm
 # load password list
 passwords = [ line.strip() for line in open("wordlist.txt") ]
 
-try:
-    # open PDF file
-    with pikepdf.open("foo-protected.pdf", password=password) as pdf:
+# iterate over passwords
+for password in tqdm(passwords, "Decrypting PDF"):
+    try:
+        # open PDF file
+        with pikepdf.open("foo-protected.pdf", password=password) as pdf:
             # Password decrypted successfully, break out of the loop
             print("[+] Password found:", password)
             break
