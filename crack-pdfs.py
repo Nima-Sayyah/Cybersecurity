@@ -15,3 +15,6 @@ for password in tqdm(passwords, "Decrypting PDF"):
     except pikepdf._qpdf.PasswordError as e:
         # wrong password, just continue in the loop
         continue
+
+#Cracking PDF Password using John The Ripper
+#Cracking PDF Password using iSeePassword Dr.PDF
