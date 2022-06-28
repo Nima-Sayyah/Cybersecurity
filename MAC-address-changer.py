@@ -3,6 +3,7 @@ import string
 import random
 import re
 
+def get_random_mac_address():
 """Generate and return a MAC address in the format of Linux"""
     # get the hexdigits uppercased
     uppercased_hexdigits = ''.join(set(string.hexdigits.upper()))
@@ -16,3 +17,8 @@ import re
                 mac += random.choice(uppercased_hexdigits)
         mac += ":"
     return mac.strip(":")
+
+def get_current_mac_address(iface):
+    # use the ifconfig command to get the interface details, including the MAC address
+    output = subprocess.check_output(f"ifconfig {iface}", shell=True).decode()
+    return re.search("ether (.+) ", output).group().split()[1].strip()
