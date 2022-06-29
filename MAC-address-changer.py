@@ -26,4 +26,7 @@ def get_current_mac_address(iface):
 def change_mac_address(iface, new_mac_address):
     # disable the network interface
     subprocess.check_output(f"ifconfig {iface} down", shell=True)
-    
+    # change the MAC
+    subprocess.check_output(f"ifconfig {iface} hw ether {new_mac_address}", shell=True)
+    # enable the network interface again
+    subprocess.check_output(f"ifconfig {iface} up", shell=True)
