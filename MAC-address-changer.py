@@ -35,3 +35,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Python Mac Changer on Linux")
     parser.add_argument("interface", help="The network interface name on Linux")
+     parser.add_argument("-r", "--random", action="store_true", help="Whether to generate a random MAC address")
+    parser.add_argument("-m", "--mac", help="The new MAC you want to change to")
+    args = parser.parse_args()
+    iface = args.interface
