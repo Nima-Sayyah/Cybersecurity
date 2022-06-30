@@ -30,3 +30,8 @@ def change_mac_address(iface, new_mac_address):
     subprocess.check_output(f"ifconfig {iface} hw ether {new_mac_address}", shell=True)
     # enable the network interface again
     subprocess.check_output(f"ifconfig {iface} up", shell=True)
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Python Mac Changer on Linux")
+    parser.add_argument("interface", help="The network interface name on Linux")
