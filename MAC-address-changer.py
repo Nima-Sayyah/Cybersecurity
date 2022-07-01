@@ -39,3 +39,6 @@ if __name__ == "__main__":
     parser.add_argument("-m", "--mac", help="The new MAC you want to change to")
     args = parser.parse_args()
     iface = args.interface
+    if args.random:
+        # if random parameter is set, generate a random MAC
+        new_mac_address = get_random_mac_address()
