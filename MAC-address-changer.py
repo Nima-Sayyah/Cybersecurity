@@ -42,3 +42,6 @@ if __name__ == "__main__":
     if args.random:
         # if random parameter is set, generate a random MAC
         new_mac_address = get_random_mac_address()
+    elif args.mac:
+        # if mac is set, use it instead
+        new_mac_address = args.mac
