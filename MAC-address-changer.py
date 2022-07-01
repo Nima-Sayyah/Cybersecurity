@@ -45,3 +45,9 @@ if __name__ == "__main__":
     elif args.mac:
         # if mac is set, use it instead
         new_mac_address = args.mac
+
+     # get the current MAC address
+    old_mac_address = get_current_mac_address(iface)
+    print("[*] Old MAC address:", old_mac_address)
+    # change the MAC address
+    change_mac_address(iface, new_mac_address)
